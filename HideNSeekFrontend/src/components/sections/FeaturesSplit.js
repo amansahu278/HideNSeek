@@ -69,11 +69,11 @@ const FeaturesSplit = ({
                   Hide
                   </div>
                   <form id='my-form'>
-                    <Input type="text" label="Plain Text" name='plain-text' className="form-input__input" value={formData["plain-text"]} onChange={handleChange}/>
-                    <Input label='Secret Password' name="password" type='password' className="form-input__input" value={formData.password} onChange={handleChange}/>
+                    <Input required type="text" label="Plain Text" name='plain-text' className="form-input__input" value={formData["plain-text"]} onChange={handleChange}/>
+                    <Input required label='Secret Password' name="password" type='password' className="form-input__input" value={formData.password} onChange={handleChange}/>
                     <br />
                     <label className='form-input_label'>Cover Image</label>
-                    <input form='my-form' type='file' accept=".jpg,.jpeg,.png" label='Cover Image' name="file" className="search-box" onChange={handleChange}/>
+                    <input required form='my-form' type='file' accept=".jpg,.jpeg,.png" label='Cover Image' name="file" className="search-box" onChange={handleChange}/>
                   </form>
                   <br/>
               </div>
@@ -95,10 +95,10 @@ const FeaturesSplit = ({
                   Seek
                   </div>
                   <form id='my-form'>
-                    <Input label='Secret Password' name="password" type='password' className="form-input__input" value={formData.password} onChange={handleChange}/>
+                    <Input required label='Secret Password' name="password" type='password' className="form-input__input" value={formData.password} onChange={handleChange}/>
                     <br />
                     <label className='form-input_label'>Embedded Cover Image</label>
-                    <input form='my-form' type='file' accept=".jpg,.jpeg,.png" label='Cover Image' name="file" className="search-box" onChange={handleChange}/>
+                    <input required form='my-form' type='file' accept=".jpg,.jpeg,.png" label='Cover Image' name="file" className="search-box" onChange={handleChange}/>
                   </form>
                   <br/>
               </div>

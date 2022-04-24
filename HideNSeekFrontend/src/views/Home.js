@@ -51,7 +51,14 @@ const Home = () => {
 
   const [buttonIsDownloading, setButtonState] = useState(false);
 
-  const preDownloading = () => setButtonState(true);
+  const preDownloading = () => {
+    setButtonState(true)
+    if(formData['password'] === "" || (isHide && formData['plain-text'] === "") || formData['file'] === null){
+      alert("All fields are required!");
+      return false;
+    }
+    return true;
+  };
   const postDownloading = () => setButtonState(false);
 
   const onErrorDownloadFile = () => {

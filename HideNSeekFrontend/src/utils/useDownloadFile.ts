@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react';
 interface DownloadFileProps {
   readonly isHide: () => boolean;
   readonly apiDefinition: () => Promise<AxiosResponse<Blob>>;
-  readonly preDownloading: () => void;
+  readonly preDownloading: () => boolean;
   readonly postDownloading: () => void;
   readonly onError: () => void;
   readonly getFileName: () => string;
@@ -31,7 +31,10 @@ export const useDownloadFile = ({
 
   const download = async () => {
     try {
-      preDownloading();
+      if(!preDownloading()){
+        postDownloading();
+        return;
+      }
       const { data } = await apiDefinition();
       if(isHide()){
         const url = URL.createObjectURL(new Blob([data]));

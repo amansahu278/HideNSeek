@@ -60,7 +60,6 @@ def process_form():
 @app.route('/retrieve', methods=['POST'])
 def retrieve():
     form_data = request.form
-    print(form_data)
     filedata = request.files["file"]
     filename = filedata.filename
     password = form_data['password']
